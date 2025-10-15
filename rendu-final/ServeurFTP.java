@@ -667,9 +667,9 @@ public class ServeurFTP {
      * @param args Arguments de la ligne de commande (non utilisés)
      */
     public static void main(String[] args) {
-        System.out.println("═══════════════════════════════════════════════════════════");
+        System.out.println("===================================");
         System.out.println("  SERVEUR FTP - TP2 Exercices 1-4");
-        System.out.println("═══════════════════════════════════════════════════════════");
+        System.out.println("===================================");
         System.out.println("Port de contrôle : " + PORT_CONTROLE);
         System.out.println("Répertoire racine : " + REPERTOIRE_RACINE);
         System.out.println("\nUtilisateurs autorisés :");
@@ -680,7 +680,7 @@ public class ServeurFTP {
         System.out.println("  - Mode actif (PORT) et passif (PASV)");
         System.out.println("  - Commandes : LIST, CWD, RETR, QUIT");
         System.out.println("  - Gestion des droits par utilisateur");
-        System.out.println("═══════════════════════════════════════════════════════════\n");
+        System.out.println("===================================\n");
 
         try (ServerSocket socketServeur = new ServerSocket(PORT_CONTROLE)) {
             System.out.println("[SERVEUR] Serveur FTP démarré, en attente de connexions...\n");

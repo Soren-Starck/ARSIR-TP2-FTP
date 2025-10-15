@@ -249,16 +249,14 @@ public class ClientFTP {
                     BufferedReader lecteurDonnees = new BufferedReader(
                         new InputStreamReader(socketDonnees.getInputStream()));
 
-                    System.out.println("\n╔═══════════════════════════════════════════════════════╗");
-                    System.out.println("║              LISTE DES FICHIERS                       ║");
-                    System.out.println("╠═══════════════════════════════════════════════════════╣");
+                    System.out.println("\n--- LISTE DES FICHIERS ---");
 
                     String ligne;
                     while ((ligne = lecteurDonnees.readLine()) != null) {
-                        System.out.println("║ " + ligne);
+                        System.out.println(ligne);
                     }
 
-                    System.out.println("╚═══════════════════════════════════════════════════════╝\n");
+                    System.out.println("--- FIN DE LA LISTE ---\n");
 
                     socketDonnees.close();
 
@@ -458,11 +456,11 @@ public class ClientFTP {
      * @param args Arguments de la ligne de commande (non utilisés)
      */
     public static void main(String[] args) {
-        System.out.println("═══════════════════════════════════════════════════════════");
+        System.out.println("===================================");
         System.out.println("  CLIENT FTP - TP2 Exercices 1-4");
-        System.out.println("═══════════════════════════════════════════════════════════");
+        System.out.println("===================================");
         System.out.println("Connexion au serveur : " + HOTE_SERVEUR + ":" + PORT_SERVEUR);
-        System.out.println("═══════════════════════════════════════════════════════════\n");
+        System.out.println("===================================\n");
 
         ClientFTP client = new ClientFTP();
 
@@ -576,29 +574,23 @@ public class ClientFTP {
      * Affiche l'aide des commandes disponibles
      */
     private static void afficherAide() {
-        System.out.println("\n╔════════════════════════════════════════════════════════════╗");
-        System.out.println("║              COMMANDES FTP DISPONIBLES                     ║");
-        System.out.println("╠════════════════════════════════════════════════════════════╣");
-        System.out.println("║ AUTHENTIFICATION (Exercice 1) :                            ║");
-        System.out.println("║   user <nom>     : Envoyer le nom d'utilisateur            ║");
-        System.out.println("║   pass <mdp>     : Envoyer le mot de passe                 ║");
-        System.out.println("║                                                            ║");
-        System.out.println("║ MODE DE TRANSFERT (Exercice 2) :                           ║");
-        System.out.println("║   port           : Activer le mode actif                   ║");
-        System.out.println("║   pasv           : Activer le mode passif                  ║");
-        System.out.println("║                                                            ║");
-        System.out.println("║ MANIPULATION DE FICHIERS (Exercice 3) :                    ║");
-        System.out.println("║   list / ls      : Lister les fichiers du répertoire       ║");
-        System.out.println("║   cwd / cd <dir> : Changer de répertoire                   ║");
-        System.out.println("║   retr / get <f> : Télécharger un fichier                  ║");
-        System.out.println("║                                                            ║");
-        System.out.println("║ AUTRES :                                                   ║");
-        System.out.println("║   quit / exit    : Se déconnecter et quitter               ║");
-        System.out.println("║   help / aide    : Afficher cette aide                     ║");
-        System.out.println("╠════════════════════════════════════════════════════════════╣");
-        System.out.println("║ UTILISATEURS DE TEST :                                     ║");
-        System.out.println("║   - anonymous (mot de passe quelconque)                    ║");
-        System.out.println("║   - foo (mot de passe : bar)                               ║");
-        System.out.println("╚════════════════════════════════════════════════════════════╝");
+        System.out.println("\n=== COMMANDES FTP DISPONIBLES ===");
+        System.out.println("\nAUTHENTIFICATION (Exercice 1) :");
+        System.out.println("  user <nom>     : Envoyer le nom d'utilisateur");
+        System.out.println("  pass <mdp>     : Envoyer le mot de passe");
+        System.out.println("\nMODE DE TRANSFERT (Exercice 2) :");
+        System.out.println("  port           : Activer le mode actif");
+        System.out.println("  pasv           : Activer le mode passif");
+        System.out.println("\nMANIPULATION DE FICHIERS (Exercice 3) :");
+        System.out.println("  list / ls      : Lister les fichiers du répertoire");
+        System.out.println("  cwd / cd <dir> : Changer de répertoire");
+        System.out.println("  retr / get <f> : Télécharger un fichier");
+        System.out.println("\nAUTRES :");
+        System.out.println("  quit / exit    : Se déconnecter et quitter");
+        System.out.println("  help / aide    : Afficher cette aide");
+        System.out.println("\nUTILISATEURS DE TEST :");
+        System.out.println("  - anonymous (mot de passe quelconque)");
+        System.out.println("  - foo (mot de passe : bar)");
+        System.out.println("==================================\n");
     }
 }
