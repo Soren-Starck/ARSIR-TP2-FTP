@@ -1,0 +1,17 @@
+INSTRUCTIONS DE TEST - EXERCICE 6
+==================================
+
+1. Compilation: javac *.java
+
+2. Lancer le serveur: java Serveur
+
+3. Dans deux terminaux différents:
+   - Terminal 1: java Client
+   - Terminal 2: java Client
+
+4. Format des coups: ligne colonne (ex: 1 1)
+   Coordonnées de 0 à 2
+
+Alternative avec netcat:
+   - Terminal 1: nc localhost 12345
+   - Terminal 2: nc localhost 12345
